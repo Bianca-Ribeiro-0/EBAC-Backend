@@ -1,24 +1,17 @@
-import domain.Carro;
-import domain.Corsa;
-import domain.HB20;
-import domain.Renault;
-
-import java.util.ArrayList;
-import java.util.List;
-
 public class App {
+
     public static void main(String[] args) {
-        // Criando uma lista de carros usando generics
-        List<Carro<String>> listaCarros = new ArrayList<>();
 
-        // Adicionando carros à lista
-        listaCarros.add(new Renault<>("Renault", "PrecoRenault", "CorRenault", "AnoRenault", "Clio"));
-        listaCarros.add(new HB20<>("HB20", "PrecoHB20", "CorHB20", "AnoHB20", "Comfort"));
-        listaCarros.add(new Corsa<>("Corsa", "PrecoCorsa", "CorCorsa", "AnoCorsa", "Sedan"));
+        InformacaoPessoa infoPessoa = Pessoa.class.getAnnotation(InformacaoPessoa.class);
 
-        // Exibindo informações de todos os carros na lista
-        for (Carro<String> carro : listaCarros) {
-            carro.InfoCarro();
+
+        if (infoPessoa != null) {
+            // Imprimindo informações da pessoa
+            System.out.println("Nome: " + infoPessoa.nome());
+            System.out.println("Idade: " + infoPessoa.idade());
+            System.out.println("Cidade: " + infoPessoa.cidade());
+        } else {
+            System.out.println("A anotação InformacaoPessoa não está presente.");
         }
     }
 }
