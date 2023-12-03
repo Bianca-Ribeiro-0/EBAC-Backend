@@ -1,4 +1,4 @@
-import java.util.List;
+package br.main.streams;
 
 import java.util.List;
 
@@ -31,7 +31,7 @@ public class Pessoa {
         this.sexo = sexo;
     }
 
-    public List<Pessoa> populaPessoas() {
+    public static List<Pessoa> populaPessoas() {
         Pessoa pessoa1 = new Pessoa("Matheus Henrique", "Masculino");
         Pessoa pessoa2 = new Pessoa("Matheus", "Masculino");
         Pessoa pessoa3 = new Pessoa("Ana Maria", "Feminino");

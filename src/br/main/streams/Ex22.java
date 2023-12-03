@@ -1,3 +1,5 @@
+package br.main.streams;
+
 import java.util.List;
 
 public class Ex22 {
