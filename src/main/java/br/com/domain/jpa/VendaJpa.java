@@ -24,8 +24,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-import main.java.br.com.dao.Persistente;
-
 @Entity
 @Table(name = "TB_VENDA")
 public class VendaJpa implements Persistente {

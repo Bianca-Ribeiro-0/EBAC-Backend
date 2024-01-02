@@ -17,7 +17,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-
 @Entity
 @Table(name = "TB_PRODUTO_QUANTIDADE")
 public class ProdutoQuantidadeJpa {

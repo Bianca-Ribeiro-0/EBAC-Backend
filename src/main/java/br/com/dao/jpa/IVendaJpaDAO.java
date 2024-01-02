@@ -8,10 +8,6 @@ import main.java.br.com.domain.jpa.VendaJpa;
 import main.java.br.com.exceptions.DAOException;
 import main.java.br.com.exceptions.TipoChaveNaoEncontradaException;
 
-/**
- * @author rodrigo.pires
- *
- */
 public interface IVendaJpaDAO extends IGenericJapDAO<VendaJpa, Long>{
 
 	public void finalizarVenda(VendaJpa venda) throws TipoChaveNaoEncontradaException, DAOException;

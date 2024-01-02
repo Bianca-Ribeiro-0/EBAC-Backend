@@ -6,12 +6,11 @@ package main.java.br.com.services.generic.jpa;
 import java.io.Serializable;
 import java.util.Collection;
 
-import main.java.br.com.dao.Persistente;
+import main.java.br.com.domain.jpa.Persistente;
 import main.java.br.com.exceptions.DAOException;
 import main.java.br.com.exceptions.MaisDeUmRegistroException;
 import main.java.br.com.exceptions.TableException;
 import main.java.br.com.exceptions.TipoChaveNaoEncontradaException;
-
 
 public interface IGenericJpaService <T extends Persistente, E extends Serializable> {
 	

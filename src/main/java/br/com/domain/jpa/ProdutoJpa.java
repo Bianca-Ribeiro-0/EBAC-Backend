@@ -13,8 +13,9 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-import main.java.br.com.dao.Persistente;
-
+/**
+ *
+ */
 @Entity
 @Table(name = "TB_PRODUTO")
 public class ProdutoJpa implements Persistente {
