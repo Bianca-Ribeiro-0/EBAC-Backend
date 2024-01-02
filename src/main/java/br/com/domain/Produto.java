@@ -7,19 +7,18 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 
 @Entity
-@Table(name = "TB_CURSO")
-public class Curso {
+@Table(name = "TB_PRODUTO")
+public class Produto {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="curso_seq")
-	@SequenceGenerator(name="curso_seq", sequenceName="sq_curso", initialValue = 1, allocationSize = 1)
+	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="produto_seq")
+	@SequenceGenerator(name="produto_seq", sequenceName="sq_curso", initialValue = 1, allocationSize = 1)
 	private Long id;
 	
 	@Column(name = "CODIGO", length = 10, nullable = false, unique = true)
@@ -30,9 +29,7 @@ public class Curso {
 	
 	@Column(name = "DESCRICAO", length = 100, nullable = false)
 	private String descricao;
-	
-	@OneToMany(mappedBy = "curso")
-	private List<Matricula> matriculas;
+
 
 	public Long getId() {
 		return id;
@@ -66,14 +63,5 @@ public class Curso {
 		this.descricao = descricao;
 	}
 
-	public List<Matricula> getMatriculas() {
-		return matriculas;
-	}
-
-	public void setMatriculas(List<Matricula> matriculas) {
-		this.matriculas = matriculas;
-	}
-	
-	
 	
 }

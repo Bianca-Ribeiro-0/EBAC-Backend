@@ -13,36 +13,36 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
-import main.java.br.com.domain.Curso;
-public class CursoDao implements ICursoDao {
+import main.java.br.com.domain.Produto;
+public class ProdutoDao implements IProdutoDao {
 
 	@Override
-	public Curso cadastrar(Curso curso) {
+	public Produto cadastrar(Produto produto) {
 		
 		EntityManagerFactory entityManagerFactory = 
 				Persistence.createEntityManagerFactory("ExemploJPA");
 		EntityManager entityManager = entityManagerFactory.createEntityManager();
 		
 		entityManager.getTransaction().begin();
-		entityManager.persist(curso);
+		entityManager.persist(produto);
 		entityManager.getTransaction().commit();
 		 
 		entityManager.close();
 		entityManagerFactory.close();
 		
 		
-		return curso;
+		return produto;
 	}
 
 	@Override
-	public void excluir(Curso cur) {
+	public void excluir(Produto produto) {
 		EntityManagerFactory entityManagerFactory = 
 				Persistence.createEntityManagerFactory("ExemploJPA");
 		EntityManager entityManager = entityManagerFactory.createEntityManager();
 		
 		entityManager.getTransaction().begin();
-		cur = entityManager.merge(cur);
-		entityManager.remove(cur);
+		produto = (Produto) entityManager.merge(produto);
+		entityManager.remove(produto);
 		entityManager.getTransaction().commit();
 		 
 		entityManager.close();
@@ -51,20 +51,20 @@ public class CursoDao implements ICursoDao {
 	}
 
 	@Override
-	public List<Curso> buscarTodos() {
+	public List<Produto> buscarTodos() {
 		EntityManagerFactory entityManagerFactory = 
 				Persistence.createEntityManagerFactory("ExemploJPA");
 		EntityManager entityManager = entityManagerFactory.createEntityManager();
 		
 		
 		CriteriaBuilder builder = entityManager.getCriteriaBuilder();
-		CriteriaQuery<Curso> query = builder.createQuery(Curso.class);
-		Root<Curso> root = query.from(Curso.class);
+		CriteriaQuery<Produto> query = builder.createQuery(Produto.class);
+		Root<Produto> root = query.from(Produto.class);
 		query.select(root);
 		
-		TypedQuery<Curso> tpQuery = 
+		TypedQuery<Produto> tpQuery =
 				entityManager.createQuery(query);
-		List<Curso> list = tpQuery.getResultList();  
+		List<Produto> list = tpQuery.getResultList();
 		
 		entityManager.close();
 		entityManagerFactory.close();
